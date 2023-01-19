@@ -4,6 +4,28 @@
             padding: 0;
         }
 
+        h2 > span {
+            color: red;
+            font-size: 25px;
+        }
+
+        h2{
+            font-size: 20px;
+        }
+
+
+        
+.mid-hadding{
+    text-align: center;
+    margin: auto;
+    font-size: 30px;
+    margin-bottom: -28px;
+    color: navy;
+    /* margin-bottom: -15px; */
+    /* margin-top: 25px; */
+}
+
+
 
         #top{
             display: flex;
@@ -195,4 +217,181 @@ main :nth-child(2){
 .select{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    justify-content: space-around;
+    margin: auto;
+    /* padding-left: 42px; */
+    /* border: 1px solid black; */
+}
+
+.select > div{
+    width: 32%;
+    line-height: 5px;
+}
+
+.select > div > a > img {
+width: 100%;
+}
+
+.select > div > a{
+    text-decoration: none;
+}
+
+.select > div > a :hover{
+    text-decoration: underline;
+    color: blue;
+}
+
+
+
+
+
+#spotlight{
+    display: flex;
+    width: 94%;
+    justify-content: space-between;
+    margin: auto;
+}
+
+#spotlight > div{
+width: 23.8%;
+}
+
+#spotlight > div > a{
+    text-decoration: none;
+}
+
+#spotlight > div > a :hover{
+    text-decoration: underline;
+}
+
+#spotlight > div > a > img{
+    width: 100%;
+}
+
+#spotlight > div > a > div{
+    display: block;
+    font-size: 18px;
+    line-height: 25px;
+    width: 90%;
+    padding: 0px 8px 0px 8px;
+}
+
+#spotlight > div > a > div > h3 > span {
+    color: red;
+}
+
+#spotlight > div > a > div > h3{
+    width: 100%;
+    font-family: 'Big Shoulders Stencil Text', cursive;
+    font-family: 'IBM Plex Serif', serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#spotlight > div > a > div > p{
+    color: rgb(84, 78, 78);
+    font-size: 16px;
+    font-family: 'Big Shoulders Stencil Text', cursive;
+    font-family: 'IBM Plex Serif', serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.offers{
+    width: 95%;
+    padding-left: 40px;
+    margin: auto;
+    display: block;;
+    padding-top: 40px;
+}
+
+
+
+.home{
+    display: flex;
+    width: 93%;
+    justify-content: space-between;
+    margin: auto;
+
+}
+
+.home > div > a > div > h3> span {
+    color: red;
+}
+
+.home > div > a > img{
+    width: 100%;
+}
+
+.home > div > a{
+    text-decoration: none;
+}
+
+.home > div > a:hover{
+text-decoration: underline;
+}
+
+.home > div{
+    width: 23%;
+}
+
+
+
+
+
+
+.tea {
+    display: flex;
+    width: 93%;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.tea > div{
+    width: 49%;
+    /* border: 1px solid; */
+}
+
+.tea > div > a > img{
+    width: 100%;
+}
+
+.tea >  div > a{
+    text-decoration: none;
+}
+
+.tea  > div > a:hover{
+    text-decoration: underline;
+}
+
+.shop{
+    /* align-items: center; */
+    margin: auto;
+    width: 93%;
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
+
+.shop > div{
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        align-items: center;
+}
+
+.shop > div > a{
+    text-decoration: none;
+    color: rgb(95, 87, 87);
+    font-size: 17px;
+}
+
+.shop > div > a:hover{
+    text-decoration: underline;
+    text-decoration-color: blue;
+}
+
+.shop > div > a > img{
+    display: block;
+    margin: auto;
+width: 80%;
 }
