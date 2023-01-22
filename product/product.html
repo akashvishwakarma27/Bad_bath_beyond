@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      /* Write all necessery css here  */
+
+      .nav{
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      #filter{
+       display: block;
+       margin: auto;
+       font-size: 30px;
+       margin-top: 30px;
+       margin-bottom: 30px;
+
+      }
+      #product-container{
+        /* border: 2px solid red; */
+        display: grid;
+        grid-template-columns:20% 20% 20% 20% ;
+        grid-gap: 20px;
+        /* margin: auto; */
+        justify-content: center;
+      }
+      #product-container>div{
+        /* border: 2px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 10px;
+      }
+      #product-container>div>img{
+        height: 200px;
+        width: 100%;
+
+      }
+      #product-container>div>button{
+         display: block;
+         margin: auto;
+         background-color: rgb(81, 201, 245);
+         color: white;
+         padding: 5px;
+         border: none;
+         border-radius: 3px;
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <h1>Masai E-Commerce</h1>
+      <a href="./index.html">Home</a>
+      <a href="./cart.html">Cart</a>
+    </div>
+    <!-- Use this Select Tag for Filtering the Products  -->
+    <select id="filter">
+      <option value="">Filter By Category</option>
+      <option value="Laptop">Laptop</option>
+      <option value="Mobile">Mobile</option>
+      <option value="Speakers">Speakers</option>
+    </select>
+    <div id="product-container">
+      <!-- Here Append All the Products  -->
+    </div>
+  </body>
+
+  <script>
+
+// let API = "https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-tech-products";
+
+    async function FetchData(){
+        try{
+          let res=await fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-tech-products")
+               res=await res.json()
+              console.log(res)
+              FilterData(res.data)
+              // DisplayProduct(res.data)
+        }catch(err){
+          console.log(err)
+        }
+    }
+    FetchData()
+
+    let filterBy=document.getElementById("filter")
+   filterBy.addEventListener("change",()=>{
+       FetchData()
+   })
+
+
+    function FilterData(data){
+      let filterValue=filterBy.value
+       if(filterValue===""){
+        DisplayProduct(data)
+       }else{
+        data=data.filter((product)=>{
+          return product.category==filterValue
+        })
+        DisplayProduct(data)
+       }
+        
+    } 
+
+
+    let CartArr=JSON.parse(localStorage.getItem("cart"))||[]
+    let Container=document.getElementById("product-container")
+
+
+    function DisplayProduct(data){
+        data.forEach((product)=>{
+            let card=document.createElement("div")
+            let image=document.createElement("img")
+            let brand=document.createElement("h3")
+            let category=document.createElement("p")
+            let details=document.createElement("p")
+            let price=document.createElement("h4")
+            let add_to_cart=document.createElement("button")
+              add_to_cart.textContent="Add to Cart"
+              image.src=product.img;
+              brand.textContent=product.brand;
+              category.textContent=product.category;
+              price.textContent=`₹${product.price}`;
+              details.textContent=product.details
+
+              card.append(image,brand,price,details,category,add_to_cart)
+              Container.append(card)
+      })
+
+    }
+  </script>
+</html>

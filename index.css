@@ -18,9 +18,9 @@
 .mid-hadding{
     text-align: center;
     margin: auto;
-    font-size: 30px;
-    margin-bottom: -28px;
-    color: navy;
+    font-size: 20   px;
+    margin-bottom: -25px;
+    color: rgb(0, 0, 0);
     /* margin-bottom: -15px; */
     /* margin-top: 25px; */
 }
@@ -299,13 +299,15 @@ width: 23.8%;
 
 .offers{
     width: 95%;
-    padding-left: 40px;
+    padding-left: 30px;
     margin: auto;
     display: block;;
     padding-top: 40px;
 }
 
-
+.offers > a > img {
+    width: 98%;
+}
 
 .home{
     display: flex;
@@ -394,4 +396,17 @@ text-decoration: underline;
     display: block;
     margin: auto;
 width: 80%;
+}
+
+
+#para{
+    margin-left: 55px;
+    width: 93%;
+    margin-top: 80px;
+}
+
+#para > p{
+    padding: 3px;
+    font-size: 14px;
+    color: rgb(95, 87, 87);
 }
